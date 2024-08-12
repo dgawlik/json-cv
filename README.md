@@ -43,7 +43,6 @@ With this lib we could write it as something like this:
     "age": 30,
     "jobSalary": 1000,
     "sideHustleSalary": 500,
-    "totalSalary": "jobSalary + sideHustleSalary"
   }
 }
 ```
