@@ -1,0 +1,235 @@
+kotlin version: 2.0.0
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: C:/Work/JsonCv/src/test/kotlin/TokenizerTests.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:29)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:16)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:241)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:140)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:155)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:50)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:104)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:48)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:453)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:62)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally$lambda$9$compile(IncrementalCompilerRunner.kt:249)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally(IncrementalCompilerRunner.kt:267)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:120)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:676)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1661)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN name:deepEquals visibility:private modality:FINAL <T> ($this:<root>.TokenizerTests, $receiver:kotlin.collections.List<T of <root>.TokenizerTests.deepEquals>, other:kotlin.collections.List<T of <root>.TokenizerTests.deepEquals>) returnType:kotlin.Boolean
+  TYPE_PARAMETER name:T index:0 variance: superTypes:[kotlin.Any?] reified:false
+  $this: VALUE_PARAMETER name:<this> type:<root>.TokenizerTests
+  $receiver: VALUE_PARAMETER name:<this> type:kotlin.collections.List<T of <root>.TokenizerTests.deepEquals>
+  VALUE_PARAMETER name:other index:0 type:kotlin.collections.List<T of <root>.TokenizerTests.deepEquals>
+  BLOCK_BODY
+    WHEN type=kotlin.Unit origin=IF
+      BRANCH
+        if: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EXCLEQ
+            arg0: CALL 'public abstract fun <get-size> (): kotlin.Int declared in kotlin.collections.List' type=kotlin.Int origin=GET_PROPERTY
+              $this: GET_VAR '<this>: kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> declared in <root>.TokenizerTests.deepEquals' type=kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> origin=null
+            arg1: CALL 'public abstract fun <get-size> (): kotlin.Int declared in kotlin.collections.List' type=kotlin.Int origin=GET_PROPERTY
+              $this: GET_VAR 'other: kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> declared in <root>.TokenizerTests.deepEquals' type=kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> origin=null
+        then: RETURN type=kotlin.Nothing from='private final fun deepEquals <T> (other: kotlin.collections.List<T of <root>.TokenizerTests.deepEquals>): kotlin.Boolean declared in <root>.TokenizerTests'
+          CONST Boolean type=kotlin.Boolean value=false
+    RETURN type=kotlin.Nothing from='private final fun deepEquals <T> (other: kotlin.collections.List<T of <root>.TokenizerTests.deepEquals>): kotlin.Boolean declared in <root>.TokenizerTests'
+      CALL 'public final fun all <T> (predicate: kotlin.Function1<T of kotlin.collections.CollectionsKt.all, kotlin.Boolean>): kotlin.Boolean [inline] declared in kotlin.collections.CollectionsKt' type=kotlin.Boolean origin=null
+        <T>: kotlin.Pair<T of <root>.TokenizerTests.deepEquals, T of <root>.TokenizerTests.deepEquals>
+        $receiver: CALL 'public final fun zip <T, R> (other: kotlin.collections.Iterable<R of kotlin.collections.CollectionsKt.zip>): kotlin.collections.List<kotlin.Pair<T of kotlin.collections.CollectionsKt.zip, R of kotlin.collections.CollectionsKt.zip>> [infix] declared in kotlin.collections.CollectionsKt' type=kotlin.collections.List<kotlin.Pair<T of <root>.TokenizerTests.deepEquals, T of <root>.TokenizerTests.deepEquals>> origin=null
+          <T>: T of <root>.TokenizerTests.deepEquals
+          <R>: T of <root>.TokenizerTests.deepEquals
+          $receiver: GET_VAR '<this>: kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> declared in <root>.TokenizerTests.deepEquals' type=kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> origin=null
+          other: GET_VAR 'other: kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> declared in <root>.TokenizerTests.deepEquals' type=kotlin.collections.List<T of <root>.TokenizerTests.deepEquals> origin=null
+        predicate: BLOCK type=kotlin.Function1<kotlin.Pair<T of <root>.TokenizerTests.deepEquals, T of <root>.TokenizerTests.deepEquals>, kotlin.Boolean> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun deepEquals$lambda$1 <T> (this$0: <root>.TokenizerTests, <destruct>: kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1>): kotlin.Boolean declared in <root>.TokenizerTests' type=kotlin.Function1<kotlin.Pair<T of <root>.TokenizerTests.deepEquals, T of <root>.TokenizerTests.deepEquals>, kotlin.Boolean> origin=INLINE_LAMBDA reflectionTarget=null
+            <T>: T of <root>.TokenizerTests.deepEquals
+            this$0: GET_VAR '<this>: <root>.TokenizerTests declared in <root>.TokenizerTests.deepEquals' type=<root>.TokenizerTests origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:42)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:385)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:402)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:169)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:41)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt.makeIrFilePhase$lambda$5(PhaseBuilders.kt:114)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 44 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:deepEquals$lambda$1 visibility:private modality:FINAL <T> (this$0:<root>.TokenizerTests, <destruct>:kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1>) returnType:kotlin.Boolean
+  TYPE_PARAMETER name:T index:0 variance: superTypes:[kotlin.Any?] reified:false
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER name:this$0 index:0 type:<root>.TokenizerTests
+  VALUE_PARAMETER DESTRUCTURED_OBJECT_PARAMETER name:<destruct> index:1 type:kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1>
+  BLOCK_BODY
+    VAR name:$i$a$-all-TokenizerTests$deepEquals$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    VAR name:a type:T of <root>.TokenizerTests.deepEquals$lambda$1 [val]
+      CALL 'public final fun component1 (): A of kotlin.Pair [operator] declared in kotlin.Pair' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=COMPONENT_N(index=1)
+        $this: GET_VAR '<destruct>: kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1> declared in <root>.TokenizerTests.deepEquals$lambda$1' type=kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1> origin=null
+    VAR name:b type:T of <root>.TokenizerTests.deepEquals$lambda$1 [val]
+      CALL 'public final fun component2 (): B of kotlin.Pair [operator] declared in kotlin.Pair' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=COMPONENT_N(index=2)
+        $this: GET_VAR '<destruct>: kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1> declared in <root>.TokenizerTests.deepEquals$lambda$1' type=kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1> origin=null
+    RETURN type=kotlin.Nothing from='private final fun deepEquals$lambda$1 <T> (this$0: <root>.TokenizerTests, <destruct>: kotlin.Pair<T of <root>.TokenizerTests.deepEquals$lambda$1, T of <root>.TokenizerTests.deepEquals$lambda$1>): kotlin.Boolean declared in <root>.TokenizerTests'
+      BLOCK type=kotlin.Boolean origin=WHEN
+        VAR IR_TEMPORARY_VARIABLE name:tmp0_subject type:T of <root>.TokenizerTests.deepEquals$lambda$1 [val]
+          GET_VAR 'val a: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+        WHEN type=kotlin.Boolean origin=WHEN
+          BRANCH
+            if: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EXCLEQ
+                arg0: GET_VAR 'val tmp0_subject: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+                arg1: CONST Null type=kotlin.Nothing? value=null
+            then: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
+              arg0: GET_VAR 'val a: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+              arg1: GET_VAR 'val b: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+          BRANCH
+            if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=kotlin.collections.List<*>
+              GET_VAR 'val tmp0_subject: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+            then: CALL 'private final fun deepEquals <T> (other: kotlin.collections.List<T of <root>.TokenizerTests.deepEquals>): kotlin.Boolean declared in <root>.TokenizerTests' type=kotlin.Boolean origin=null
+              <T>: kotlin.Any
+              $this: GET_VAR 'this$0: <root>.TokenizerTests declared in <root>.TokenizerTests.deepEquals$lambda$1' type=<root>.TokenizerTests origin=null
+              $receiver: BLOCK type=kotlin.collections.List<kotlin.Any> origin=null
+                CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                  object: GET_VAR 'val a: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+                  message: CONST String type=kotlin.String value="null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>"
+                TYPE_OP type=kotlin.collections.List<kotlin.Any>? origin=CAST typeOperand=kotlin.collections.List<kotlin.Any>?
+                  GET_VAR 'val a: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+              other: BLOCK type=kotlin.collections.List<kotlin.Any> origin=null
+                CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                  object: GET_VAR 'val b: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+                  message: CONST String type=kotlin.String value="null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>"
+                TYPE_OP type=kotlin.collections.List<kotlin.Any>? origin=CAST typeOperand=kotlin.collections.List<kotlin.Any>?
+                  GET_VAR 'val b: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+          BRANCH
+            if: CONST Boolean type=kotlin.Boolean value=true
+            then: BLOCK type=kotlin.Boolean origin=FOLDED_ELVIS
+              WHEN type=kotlin.Boolean origin=FOLDED_ELVIS
+                BRANCH
+                  if: CALL 'public final fun ANDAND (arg0: kotlin.Boolean, arg1: kotlin.Boolean): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                    arg0: COMPOSITE type=kotlin.Boolean origin=null
+                      CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                          arg0: GET_VAR 'val a: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+                          arg1: CONST Null type=kotlin.Nothing? value=null
+                    arg1: COMPOSITE type=kotlin.Boolean origin=null
+                      VAR IR_TEMPORARY_VARIABLE name:tmp0_elvis_lhs type:kotlin.Boolean [val]
+                        CALL 'public open fun equals (other: kotlin.Any?): kotlin.Boolean [fake_override,operator] declared in kotlin.Nothing' type=kotlin.Boolean origin=null
+                          $this: TYPE_OP type=kotlin.Nothing origin=IMPLICIT_CAST typeOperand=kotlin.Nothing
+                            GET_VAR 'val a: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+                          other: GET_VAR 'val b: T of <root>.TokenizerTests.deepEquals$lambda$1 [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=T of <root>.TokenizerTests.deepEquals$lambda$1 origin=null
+                      CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                          arg0: GET_VAR 'val tmp0_elvis_lhs: kotlin.Boolean [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=kotlin.Boolean origin=null
+                          arg1: CONST Null type=kotlin.Nothing? value=null
+                  then: GET_VAR 'val tmp0_elvis_lhs: kotlin.Boolean [val] declared in <root>.TokenizerTests.deepEquals$lambda$1' type=kotlin.Boolean origin=null
+                BRANCH
+                  if: CONST Boolean type=kotlin.Boolean value=true
+                  then: CONST Boolean type=kotlin.Boolean value=false
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:67)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:99)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:610)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:638)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitReturn(ExpressionCodegen.kt:1045)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitReturn(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrReturn.accept(IrReturn.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 54 more
+Caused by: java.lang.IllegalStateException: Fake override should have at least one overridden descriptor: FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN <> ($this:kotlin.Nothing, other:kotlin.Any?) returnType:kotlin.Boolean [fake_override,operator]
+	at org.jetbrains.kotlin.backend.jvm.ir.JvmIrUtilsKt.findSuperDeclaration(JvmIrUtils.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.mapping.MethodSignatureMapper.findSuperDeclaration(MethodSignatureMapper.kt:440)
+	at org.jetbrains.kotlin.backend.jvm.mapping.MethodSignatureMapper.mapToCallableMethod(MethodSignatureMapper.kt:409)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:599)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:784)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.declarations.IrVariable.accept(IrVariable.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:587)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitComposite(IrElementVisitor.kt:125)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrComposite.accept(IrComposite.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.intrinsics.AndAnd$BooleanConjunction.jumpIfFalse(AndAnd.kt:26)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:1092)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrWhen.accept(IrWhen.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:587)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:407)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:1095)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrWhen.accept(IrWhen.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:587)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:407)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitReturn(ExpressionCodegen.kt:1045)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitReturn(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrReturn.accept(IrReturn.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 71 more
+
+
